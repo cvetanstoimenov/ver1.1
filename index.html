@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="jquery.mobile-1.4.0.min.css" />
+	<link rel="stylesheet" type="text/css" href="./dist/css/jQuery-Mobile-Progress-Bar-with-Percentage.min.css" />
+    <link rel="stylesheet" type="text/css" href="index.css" />
+
+    <script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="jquery.mobile-1.4.0.min.js"></script>
+    <script type="text/javascript" src="cordova-1.5.0.js"></script>
+	
+</head>
+
+
+<body onload="onLoad()">
+
+
+    <div data-role="page" id="first">
+        <div align="center" data-role="content" id="contentConfirmation">
+
+            <h1 class='titleClass'>Upišite pristupne podatke</h1>
+			<h4 class='requiredFieldsValidation'></h4>
+            <div data-role="fieldcontain">
+                <input class="required" id="inputEmail" name="uid_r" type="text" value="" placeholder="Korisnik">
+            </div>
+            <div data-role="fieldcontain">
+                <input class="required" id="password" name="pwd_r" type="password" value="" placeholder="Lozinka">
+            </div>
+            
+            <a href="#second" id="btn_ok" data-role="button" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="ui-btn ui-shadow ui-btn-corner-all ui-btn-up-c"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">OK</span></span></a>
+
+        </div>
+    </div>
+
+
+
+
+
+
+    <div data-role="page" id="second">
+        <div align="center" data-role="content" id="contentConfirmation">
+		
+			<div data-role="header" id="headerDiv">
+				<h1>CRM</h1>
+				<a href="javascript:void(0)" data-role="button" data-icon="refresh" data-iconpos="notext" class="ui-btn-right btn-tab" name="refresh" ></a> 
+			</div> 
+
+            <div class="horizontal-group-buttons" data-role="controlgroup" data-type="horizontal">
+                <button type="button" class="btn-tab" name="svi">svi</button>
+                <button type="button" class="btn-tab" name="preostali">preostali</button>
+                <button type="button" class="btn-tab" name="evidentirani">evidentirani</button>
+            </div>
+			
+			
+			<div id="searchDiv">
+				<input data-type="search" name="search" id="filterBasic-input" value="" />
+			</div>
+
+            <ul data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow" id="result" data-filter="true" data-input="#filterBasic-input">
+            </ul>
+
+		
+	    <img id="loading" src="loading.gif" alt="Smiley face" height="60" width="60"> 
+		<h1 id="pleaseWait">Please wait</h1>	
+        </div>
+    </div>
+	
+	
+	
+
+
+    <div data-role="dialog" id="dialog" data-overlay-theme="a" data-dismissible="false">
+        <div data-role="header" data-theme="b">
+            <h1>Promjenu statusa</h1>
+			<h1 class="IdOfSelectedClan"></h1>
+        </div>
+        <div role="main" class="ui-content">
+
+            <a href='#' data-theme="e" data-role="button" id="firstA">
+                <img id='firstImage' /><span id="firstTextTd"></span></a>
+            <a href='#' data-theme="e" data-role="button" id="secondA">
+                <img id='secondImage' /><span id="secondTextTd"></span></a>
+
+        </div>
+    </div>
+
+	 <div data-role="dialog" id="errorTaskChange" data-overlay-theme="a" data-dismissible="false">
+        <div data-role="header" data-theme="b">
+            <h1>Error</h1>
+        </div>
+        <div role="main" class="ui-content text-align">
+            <h1>Unsuccessful change in CRM. Please try again.</h1>
+        </div>
+    </div>
+
+
+
+    <div data-role="dialog" id="errorLogin" data-overlay-theme="a" data-dismissible="false">
+        <div data-role="header" data-theme="b">
+            <h1>Error</h1>
+        </div>
+        <div role="main" class="ui-content text-align">
+            <h1>Invalid username or password</h1>
+        </div>
+    </div>
+	
+
+
+
+    <div data-role="dialog" id="noDataMessage" data-overlay-theme="a" data-dismissible="false">
+        <div data-role="header" data-theme="b">
+            <h1>Error</h1>
+        </div>
+        <div role="main" class="ui-content text-align">
+           <h1>There is no data of this voting place</h1>
+        </div>
+    </div>
+
+
+</body>
+</html>
